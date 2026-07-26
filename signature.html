@@ -1,48 +1,55 @@
 <!--
   ══════════════════════════════════════════════════════════════════
   EMAIL SIGNATURE  ·  Nimit Jalan
-  Setup + customisation guide: README.md
   ──────────────────────────────────────────────────────────────────
   HOW TO USE
     1. Open this file in a browser.
     2. Ctrl/Cmd + A, then Ctrl/Cmd + C.
     3. Paste into Gmail → Settings → General → Signature.
     Copy the RENDERED page, not this source code.
+    In the message body, leave ONE blank line between your sign-off
+    ("Kind Regards,") and the signature block.
 
-  DESIGN NOTES — why this file looks the way it does
+  DESIGN NOTES
     · Every style is INLINE. Gmail's signature editor deletes
-      <style> blocks, classes, :hover, @keyframes and @media, so
-      anything defined there would silently vanish on paste.
+      <style> blocks, classes, :hover, @keyframes and @media.
     · Layout is <table>-based. Gmail strips `position` and `float`.
     · Images are pre-cropped to their final aspect ratio, because
       Gmail ignores `object-fit` and would stretch them instead.
-    · Images are served at 2× and displayed at 1× for retina.
+    · ONE hairline only (the vertical divider). The previous version
+      had a top rule AND a vertical rule that never met — two sides
+      of a box that doesn't close, which is what read as unfinished.
+
+  ASSETS  — two things to do in the repo
+    1. Re-export at 2×, keep the width/height attrs at 1×:
+         profile.png    → 224 × 280   (displayed 112 × 140)
+         icons/*.png    →  36 ×  36   (displayed  18 ×  18)
+       The old comment claimed 2× but the files were 1×.
+    2. Served via jsDelivr, not raw.githubusercontent. raw.* is not
+       a CDN, rate-limits, and sends Cache-Control: no-cache, which
+       fights Gmail's image proxy. jsDelivr caches @main for ~12h —
+       to force an update, tag a release and swap @main for @v2.
+
+  ROW MATH — the right column sums to exactly 140px, the portrait
+  height, so the two columns bottom out together. If you add or
+  remove a row, rebalance the paddings or the block goes ragged.
+      name 27 + 6 + role 15 + 16 + site 21 + 2 + writing 21
+           + 14 + icons 18  =  140
 
   PALETTE
-    Ink       #0f172a      Accent    #0f766e
-    Body      #475569      Hairline  #e3e7ed
+    Ink       #1f2937      Accent    #0f766e
+    Body      #64748b      Hairline  #e3e7ed
+    (Ink and body lightened from near-black — they survive Gmail
+     dark-mode inversion better than #0f172a did.)
   ══════════════════════════════════════════════════════════════════
 -->
 
 <!-- ═══════════════════ SIGNATURE START ═══════════════════ -->
 <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;-webkit-text-size-adjust:100%;">
-
-  <!-- ─── Top rule: 44px accent tab, then hairline ─── -->
-  <tr>
-    <td colspan="2" style="padding:0 0 22px 0;">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0;">
-        <tr>
-          <td width="44" height="3" style="width:44px;height:3px;line-height:3px;font-size:1px;background-color:#0f766e;">&nbsp;</td>
-          <td height="3" style="height:3px;line-height:3px;font-size:1px;background-color:#e3e7ed;">&nbsp;</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
   <tr>
     <!-- ─── Left: portrait ─── -->
     <td valign="top" width="112" style="width:112px;padding:0 26px 0 0;">
-      <img src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/profile.png?v=6"
+      <img src="https://cdn.jsdelivr.net/gh/NimJal/Email-Signature@main/assets/profile.png"
            alt="Nimit Jalan" width="112" height="140"
            style="display:block;width:112px;height:140px;border:0;outline:none;text-decoration:none;border-radius:14px;">
     </td>
@@ -53,69 +60,51 @@
 
         <!-- Name -->
         <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:21px;line-height:27px;font-weight:700;color:#0f172a;letter-spacing:-0.3px;white-space:nowrap;mso-line-height-rule:exactly;">
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:21px;line-height:27px;font-weight:700;color:#1f2937;letter-spacing:-0.3px;white-space:nowrap;mso-line-height-rule:exactly;">
             Nimit Jalan
           </td>
         </tr>
 
-        <!-- Role -->
+        <!-- Role — anchored to a place, so it isn't a floating job title -->
         <tr>
           <td style="padding-top:6px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:11px;line-height:15px;font-weight:700;color:#0f766e;letter-spacing:1.4px;white-space:nowrap;mso-line-height-rule:exactly;">
-            FULL-STACK DEVELOPER
+            FULL-STACK DEVELOPER &nbsp;·&nbsp; RAK, UAE
           </td>
         </tr>
 
-        <!-- Email -->
+        <!-- Website. The mailto row is gone: your address is already in
+             the From field two inches above this block. -->
         <tr>
-          <td style="padding-top:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:21px;color:#475569;white-space:nowrap;mso-line-height-rule:exactly;">
-            <a href="mailto:hi@nimit.is-a.dev" style="color:#475569;text-decoration:none;">hi@nimit.is-a.dev</a>
+          <td style="padding-top:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:21px;color:#64748b;white-space:nowrap;mso-line-height-rule:exactly;">
+            <a href="https://nimit.is-a.dev" style="color:#64748b;text-decoration:none;">nimit.is-a.dev</a>
           </td>
         </tr>
 
-        <!-- Website -->
+        <!-- Writing — a word, not a glyph. Substack's flame has no
+             recognition outside people who already use Substack. -->
         <tr>
-          <td style="padding-top:2px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:21px;color:#475569;white-space:nowrap;mso-line-height-rule:exactly;">
-            <a href="https://nimit.is-a.dev" style="color:#475569;text-decoration:none;">https://nimit.is-a.dev</a>
+          <td style="padding-top:2px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:21px;color:#64748b;white-space:nowrap;mso-line-height-rule:exactly;">
+            <a href="https://nimitjalan.substack.com/" style="color:#64748b;text-decoration:none;">Writing at Substack</a>
           </td>
         </tr>
 
-        <!-- Social icons -->
+        <!-- Icons — down to the two marks people read without thinking.
+             Medium dropped: two writing platforms makes the reader pick. -->
         <tr>
           <td style="padding-top:14px;">
             <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0;">
               <tr>
                 <td style="padding:0 15px 0 0;">
-                  <a href="https://nimit.is-a.dev" title="Website" style="text-decoration:none;">
-                    <img src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/website.png"
-                         alt="Website" width="18" height="18"
-                         style="display:block;width:18px;height:18px;border:0;outline:none;text-decoration:none;">
-                  </a>
-                </td>
-                <td style="padding:0 15px 0 0;">
                   <a href="https://github.com/NimJal" title="GitHub" style="text-decoration:none;">
-                    <img src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/github.png"
+                    <img src="https://cdn.jsdelivr.net/gh/NimJal/Email-Signature@main/assets/icons/github.png"
                          alt="GitHub" width="18" height="18"
                          style="display:block;width:18px;height:18px;border:0;outline:none;text-decoration:none;">
                   </a>
                 </td>
-                <td style="padding:0 15px 0 0;">
-                  <a href="https://www.linkedin.com/in/nimit-jalan/" title="LinkedIn" style="text-decoration:none;">
-                    <img src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/linkedin.png"
-                         alt="LinkedIn" width="18" height="18"
-                         style="display:block;width:18px;height:18px;border:0;outline:none;text-decoration:none;">
-                  </a>
-                </td>
-                <td style="padding:0 15px 0 0;">
-                  <a href="https://nimitjalan.medium.com" title="Medium" style="text-decoration:none;">
-                    <img src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/medium.png"
-                         alt="Medium" width="18" height="18"
-                         style="display:block;width:18px;height:18px;border:0;outline:none;text-decoration:none;">
-                  </a>
-                </td>
                 <td style="padding:0;">
-                  <a href="https://nimitjalan.substack.com/" title="Substack" style="text-decoration:none;">
-                    <img src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/substack.png"
-                         alt="Substack" width="18" height="18"
+                  <a href="https://www.linkedin.com/in/nimit-jalan/" title="LinkedIn" style="text-decoration:none;">
+                    <img src="https://cdn.jsdelivr.net/gh/NimJal/Email-Signature@main/assets/icons/linkedin.png"
+                         alt="LinkedIn" width="18" height="18"
                          style="display:block;width:18px;height:18px;border:0;outline:none;text-decoration:none;">
                   </a>
                 </td>
@@ -123,6 +112,17 @@
             </table>
           </td>
         </tr>
+
+        <!-- ─── OPTIONAL: current-project line ───────────────────────
+             Uncomment to add. Then change the "padding-top:16px" on the
+             website row above to 8px, so the column still sums to 140.
+
+        <tr>
+          <td style="padding-top:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:21px;color:#64748b;white-space:nowrap;mso-line-height-rule:exactly;">
+            Currently building RadReporter
+          </td>
+        </tr>
+        ────────────────────────────────────────────────────────────── -->
 
       </table>
     </td>
