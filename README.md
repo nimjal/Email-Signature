@@ -118,7 +118,7 @@ if a client strips the CSS.
 ### 5. Change the social icons
 
 Icons live in `assets/icons/` as 120 × 120 transparent PNGs, all drawn in slate `#0f172a`. Use any
-file in that folder — the signature currently wires up `website`, `github` and `linkedin`.
+file in that folder — the signature currently wires up `website`, `github`, `linkedin` and `medium`.
 
 The original set also included Behance, Discord, Dribbble, Facebook, Instagram, Telegram, Threads,
 TikTok, WhatsApp, X and YouTube. If you want one back, it's still in git history:
