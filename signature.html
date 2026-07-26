@@ -1,0 +1,118 @@
+<!--
+  ==================================================================
+  EMAIL SIGNATURE  ·  full step-by-step guide is in README.md
+  ------------------------------------------------------------------
+  CUSTOMISED FOR: Nimit Jalan
+
+    Name ........ Nimit Jalan
+    Title ....... Full-Stack Developer
+    Email ....... hi@nimit.is-a.dev        (appears twice)
+    Website ..... nimit.is-a.dev
+    GitHub ...... github.com/NimJal
+    LinkedIn .... linkedin.com/in/nimit-jalan
+
+  All images load from  github.com/NimJal/Email-Signature  (must be PUBLIC).
+  Replace assets/profile.png with your own square photo before pushing.
+  ==================================================================
+-->
+<style>
+  /* ================= ENTRANCE (plays once) ================= */
+  @keyframes sigCardIn   { from{ opacity:0; transform:translateY(16px) scale(.99); } to{ opacity:1; transform:none; } }
+  @keyframes sigRise     { from{ opacity:0; transform:translateY(10px); }            to{ opacity:1; transform:none; } }
+  @keyframes sigRailIn   { from{ opacity:0; transform:translateX(-10px); }           to{ opacity:1; transform:none; } }
+  @keyframes sigPhotoIn  { from{ opacity:0; transform:scale(1.05); }                 to{ opacity:1; transform:none; } }
+
+  /* ================= IDLE (subtle, professional loop) ================= */
+  @keyframes sigFloat    { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-3px); } }
+  /* diagonal glare sweeps once, then holds fully off-screen (both ends invisible) so the loop never snaps */
+  @keyframes sigSheen    { 0%{ transform:translateX(-70px) skewX(-18deg); } 26%{ transform:translateX(200px) skewX(-18deg); } 100%{ transform:translateX(200px) skewX(-18deg); } }
+
+  .sig-card{ animation: sigCardIn .95s cubic-bezier(.16,1,.3,1) both; }
+  .sig-rail-item{ opacity:0; }
+  .sig-r1{ animation: sigRailIn .7s ease-out .35s both; }
+  .sig-r2{ animation: sigRailIn .7s ease-out .48s both; }
+  .sig-r3{ animation: sigRailIn .7s ease-out .61s both; }
+  .sig-name{ animation: sigRise .8s ease-out .42s both; }
+  .sig-title{ animation: sigRise .8s ease-out .50s both; }
+  .sig-hairline{ animation: sigRise .8s ease-out .58s both; }
+  .sig-line1{ animation: sigRise .8s ease-out .66s both; }
+  .sig-line2{ animation: sigRise .8s ease-out .74s both; }
+
+  .sig-photo-wrap{ animation: sigPhotoIn 1s cubic-bezier(.16,1,.3,1) .22s both, sigFloat 7s ease-in-out 1.6s infinite; }
+  /* 'both' fill = stays off-screen during the delay, so no static streak before the first sweep */
+  .sig-sheen{ animation: sigSheen 6.5s ease-in-out 2.4s infinite both; }
+
+  .sig-rail-item a{ transition: color .2s ease, transform .2s ease; display:inline-block; }
+  .sig-rail-item a:hover{ color:#2563eb; transform:translateY(-2px) scale(1.12); }
+  .sig-photo{ transition: transform .5s ease; }
+  .sig-photo-wrap:hover .sig-photo{ transform:scale(1.04); }
+
+  @media (prefers-reduced-motion: reduce){
+    .sig-card,.sig-rail-item,.sig-name,.sig-title,.sig-line1,.sig-line2,.sig-hairline,.sig-photo-wrap,.sig-sheen{ animation:none !important; opacity:1 !important; }
+  }
+</style>
+
+<!-- ===================== SIGNATURE START ===================== -->
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <tr>
+    <td class="sig-card" style="padding:26px 30px;background:#ffffff;border:1px solid #edf0f4;border-radius:22px;box-shadow:0 10px 40px rgba(15,23,42,.07);">
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;">
+        <tr>
+          <!-- ===== LEFT: boxed icon rail ===== -->
+          <td valign="middle" style="padding-right:26px;">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;border:1px solid #e8ebf0;border-radius:14px;">
+              <tr><td class="sig-rail-item sig-r1" align="center" style="padding:13px 15px;">
+                <a href="https://nimit.is-a.dev" title="Website" style="text-decoration:none;color:#0f172a;">
+                  <img width="19" height="19" alt="Website" style="display:block;"
+                    src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/website.png">
+                </a>
+              </td></tr>
+              <tr><td style="padding:0 12px;"><div style="height:1px;background:#eef1f5;"></div></td></tr>
+              <tr><td class="sig-rail-item sig-r2" align="center" style="padding:13px 15px;">
+                <a href="https://github.com/NimJal" title="GitHub" style="text-decoration:none;color:#0f172a;">
+                  <img width="19" height="19" alt="GitHub" style="display:block;"
+                    src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/github.png">
+                </a>
+              </td></tr>
+              <tr><td style="padding:0 12px;"><div style="height:1px;background:#eef1f5;"></div></td></tr>
+              <tr><td class="sig-rail-item sig-r3" align="center" style="padding:13px 15px;">
+                <a href="https://www.linkedin.com/in/nimit-jalan/" title="LinkedIn" style="text-decoration:none;color:#0f172a;">
+                  <img width="19" height="19" alt="LinkedIn" style="display:block;"
+                    src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/linkedin.png">
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+          <!-- ===== MIDDLE: identity ===== -->
+          <td valign="middle" style="padding-right:38px;white-space:nowrap;">
+            <div class="sig-name" style="font-size:23px;font-weight:800;color:#0f172a;letter-spacing:-.4px;line-height:1.2;white-space:nowrap;">
+              Nimit Jalan
+              <img width="17" height="17" alt="" style="vertical-align:-2px;margin-left:5px;"
+                src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/icons/verified.png">
+            </div>
+
+            <div class="sig-title" style="font-size:13.5px;font-weight:600;color:#64748b;letter-spacing:.1px;margin-top:6px;white-space:nowrap;">Full-Stack Developer</div>
+
+            <div class="sig-hairline" style="width:44px;height:3px;border-radius:3px;background:linear-gradient(90deg,#2563eb,#60a5fa);margin:15px 0;"></div>
+
+            <div class="sig-line1" style="font-size:14px;line-height:23px;"><a href="mailto:hi@nimit.is-a.dev" style="color:#475569;text-decoration:none;">hi@nimit.is-a.dev</a></div>
+            <div class="sig-line2" style="font-size:14px;line-height:23px;"><a href="https://nimit.is-a.dev" style="color:#475569;text-decoration:none;">nimit.is-a.dev</a></div>
+          </td>
+
+          <!-- ===== RIGHT: portrait ===== -->
+          <td valign="top">
+            <div class="sig-photo-wrap" style="position:relative;width:150px;height:150px;overflow:hidden;border-radius:16px;">
+              <!-- Upload YOUR square photo as assets/profile.png in github.com/NimJal/Email-Signature -->
+              <img class="sig-photo" src="https://raw.githubusercontent.com/NimJal/Email-Signature/main/assets/profile.png?v=5" alt="Nimit Jalan"
+                   width="150" height="150"
+                   style="display:block;width:150px;height:150px;border-radius:16px;object-fit:cover;">
+              <span class="sig-sheen" style="position:absolute;top:-30px;bottom:-30px;left:0;width:42px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);"></span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ====================== SIGNATURE END ====================== -->
