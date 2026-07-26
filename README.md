@@ -118,7 +118,19 @@ if a client strips the CSS.
 ### 5. Change the social icons
 
 Icons live in `assets/icons/` as 120 × 120 transparent PNGs, all drawn in slate `#0f172a`. Use any
-file in that folder — the signature currently wires up `website`, `github`, `linkedin` and `medium`.
+file in that folder — the signature currently wires up `website`, `github`, `linkedin`, `medium` and
+`substack`.
+
+`substack.png` was drawn for this repo to match the set: the rounded-square container is lifted from
+`linkedin.png`'s alpha channel so the silhouette is pixel-identical, with the official Substack mark
+knocked out in white. If you need to draw another icon to match, the house spec is:
+
+```
+canvas    120 × 120, transparent
+artwork   94 × 94, positioned at (13, 13)   — i.e. 13px padding all round
+ink       #0f172a
+glyph     pure white, optically centred on (59.5, 59.5), roughly 50-65px tall
+```
 
 The original set also included Behance, Discord, Dribbble, Facebook, Instagram, Telegram, Threads,
 TikTok, WhatsApp, X and YouTube. If you want one back, it's still in git history:
@@ -141,7 +153,9 @@ To swap one, change the filename in the `src`. To add another, copy a `<td>` ins
 
 The **last** icon cell must use `padding:0;` so the row doesn't end with trailing space.
 
-Three to five icons is the sweet spot — more starts to look like a link farm.
+Three to five icons is the sweet spot — more starts to look like a link farm. There's also a layout
+reason to stop at five: the icon row is now 150px against a 155px text column, so a sixth icon
+becomes the widest element and starts stretching the whole signature.
 
 ### 6. Re-check the vertical rhythm
 
